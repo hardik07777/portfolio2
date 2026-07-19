@@ -1,0 +1,365 @@
+/* ==========================================
+   SECTION
+========================================== */
+
+.contact{
+    background:#000;
+    color:#fff;
+    padding:55px 0 40px;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.contact-container{
+
+    width:min(1200px,92%);   /* increased from 980px */
+    margin:auto;
+    height: 2 00px;      /* Try 500px */
+
+
+    display:grid;
+    grid-template-columns:1.25fr .95fr;
+
+
+    border:1px solid rgba(255,255,255,.08);
+    background:#080808;
+
+    /* overflow:hidden; */
+
+    transition:.45s;
+}
+
+.contact-container:hover{
+
+    border-color:rgba(255,255,255,.18);
+
+    box-shadow:
+        0 20px 60px rgba(255,255,255,.04);
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.contact-media{
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    border-right:1px solid rgba(255,255,255,.08);
+
+    background:#050505;
+}
+
+.contact-image{
+
+    width:100%;          /* Smaller image */
+    height:auto;
+
+    object-fit:contain;
+
+    display:block;
+
+    transition:1s cubic-bezier(.22,.61,.36,1);
+
+    filter:drop-shadow(0 20px 40px rgba(0,0,0,.45));
+}
+
+.contact-media:hover .contact-image{
+
+    transform:scale(1.05);
+}
+
+.contact-media::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.18),
+            transparent 45%,
+            rgba(0,0,0,.06)
+        );
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.contact-form{
+
+    padding:40px 42px;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    background:
+    linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px),
+    #080808;
+
+    background-size:28px 28px;
+}
+
+/* ==========================================
+   LABEL
+========================================== */
+
+.contact-form span{
+
+    font-family:"Inter",sans-serif;
+
+    color:#8d8d8d;
+
+    letter-spacing:5px;
+
+    font-size:.76rem;
+
+    margin-bottom:18px;
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.contact-form h2{
+
+    font-family:"Outfit",sans-serif;
+
+    font-size:clamp(2.7rem,4vw,3.8rem);
+
+    line-height:.95;
+
+    font-weight:600;
+
+    letter-spacing:-2px;
+
+    margin-bottom:18px;
+}
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.contact-form p{
+
+    font-family:"Inter",sans-serif;
+
+    color:#9b9b9b;
+
+    font-size:.98rem;
+
+    line-height:1.75;
+
+    margin-bottom:22px;
+
+    max-width:390px;
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.contact-form form{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:16px;
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    background:transparent;
+
+    color:#fff;
+
+    border:none;
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+    padding:14px 0;
+
+    outline:none;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:1rem;
+
+    transition:.35s;
+}
+
+.contact-form textarea{
+
+    resize:none;
+
+    min-height:90px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+
+    color:#666;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:#fff;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.contact-form button{
+
+    margin-top:10px;
+
+    width:180px;
+
+    height:48px;
+
+    border:1px solid #fff;
+
+    background:#fff;
+
+    color:#000;
+
+    cursor:pointer;
+
+    font-family:"Outfit",sans-serif;
+
+    font-size:.92rem;
+
+    font-weight:600;
+
+    transition:.35s;
+}
+
+.contact-form button:hover{
+
+    background:#000;
+
+    color:#fff;
+}
+
+/* ==========================================
+   QUOTE
+========================================== */
+
+.contact-quote{
+
+    width:min(980px,90%);
+
+    margin:38px auto 0;
+
+    text-align:center;
+}
+
+.quote-line{
+
+    width:100%;
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+    margin-bottom:22px;
+}
+
+.contact-quote h3{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(1.6rem,2.8vw,2.3rem);
+
+    font-style:italic;
+
+    font-weight:500;
+
+    margin-bottom:10px;
+}
+
+.contact-quote span{
+
+    font-family:"Inter",sans-serif;
+
+    color:#777;
+
+    letter-spacing:3px;
+
+    font-size:.78rem;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+.contact-container{
+
+    width:95%;
+    grid-template-columns:1fr;
+    min-height:auto;
+}
+
+.contact-media{
+
+    height:420px;
+    border-right:none;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.contact-image{
+
+    width:55%;
+}
+
+.contact-form{
+
+    padding:40px 42px;
+}
+
+}
+
+@media(max-width:600px){
+
+.contact-container{
+
+    width:95%;
+}
+
+.contact-media{
+
+    height:300px;
+}
+
+.contact-image{
+
+    width:70%;
+}
+
+}

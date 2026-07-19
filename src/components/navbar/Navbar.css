@@ -1,0 +1,88 @@
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:18px 18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    z-index:999;
+}
+
+/* Signature */
+
+.signature{
+
+    font-family:"Alex Brush",cursive;
+
+    font-size: 2.5rem;
+
+    color:#fff;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:.35s ease;
+}
+
+.signature:hover{
+
+    transform:scale(1.05);
+}
+
+/* Menu */
+
+.menu{
+
+    width:34px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+
+    cursor:pointer;
+}
+
+.menu span{
+
+    width:100%;
+
+    height:2px;
+
+    background:#fff;
+
+    border-radius:999px;
+
+    transition:.3s;
+}
+
+.menu span:last-child{
+
+    width:70%;
+
+    margin-left:auto;
+}
+
+.menu:hover span:first-child{
+
+    width:70%;
+}
+
+.menu:hover span:last-child{
+
+    width:100%;
+}

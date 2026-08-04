@@ -1,7 +1,7 @@
 import "./Project.css";
 import { motion } from "framer-motion";
 
-import CollabBoard from "../../assets/projects/CollaBoard.png";
+import CollabBoard from "../../assets/projects/CollabBoard.png";
 import storybook from "../../assets/projects/storybook.png";
 import armoriq from "../../assets/projects/armoriq.png";
 import signaldock from "../../assets/projects/signaldock.png";

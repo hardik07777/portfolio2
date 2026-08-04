@@ -1,0 +1,17 @@
+.bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Keeps it behind everything else */
+    pointer-events: none; /* Ensures the mouse ignores the background */
+    overflow: hidden;
+}
+
+.bg-canvas svg {
+    width: 100%;
+    height: 100%;
+    /* This makes sure the lines don't distort on different screen sizes */
+    object-fit: cover; 
+}

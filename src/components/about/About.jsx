@@ -29,56 +29,80 @@ export default developer;`;
 
 export default function About() {
   return (
-  <section className="about-section">
+    <section className="about-section">
 
-    <div className="about-wrapper">
-
-      <section className="about">
+      <div className="about-container">
 
         <motion.div
-          className="editor"
-          initial={{ opacity: 0, y: 80 }}
+          className="about-heading"
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="editor-top">
-            <div className="dots">
-              <span className="red"></span>
-              <span className="yellow"></span>
-              <span className="green"></span>
-            </div>
-
-            <div className="tab">
-              <span>JS</span>
-              AboutMe.js
-            </div>
+          <div className="about-label">
+            <span className="about-line"></span>
+            <p>ABOUT</p>
           </div>
 
-          <SyntaxHighlighter
-            language="javascript"
-            style={oneDark}
-            showLineNumbers
-            wrapLongLines
-            customStyle={{
-              background: "#0d1117",
-              margin: 0,
-              padding: "32px 42px",
-              fontSize: "18px",
-              lineHeight: "1.9",
-              borderRadius: "0 0 24px 24px",
-              fontFamily: '"JetBrains Mono", monospace',
-            }}
-          >
-            {code}
-          </SyntaxHighlighter>
-
+          <h2 className="about-title">
+            About Me
+          </h2>
         </motion.div>
 
-      </section>
+        <div className="about-wrapper">
 
-    </div>
+          <section className="about">
 
-  </section>
-);
+            <motion.div
+              className="editor"
+              initial={{ opacity: 0, y: 70 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.8,
+                delay: 0.15,
+              }}
+            >
+              <div className="editor-top">
+                <div className="dots">
+                  <span className="red"></span>
+                  <span className="yellow"></span>
+                  <span className="green"></span>
+                </div>
+
+                <div className="tab">
+                  <span>JS</span>
+                  AboutMe.js
+                </div>
+              </div>
+
+              <SyntaxHighlighter
+                language="javascript"
+                style={oneDark}
+                showLineNumbers
+                wrapLongLines
+                customStyle={{
+                  background: "#0d1117",
+                  margin: 0,
+                  padding: "32px 42px",
+                  fontSize: "18px",
+                  lineHeight: "1.9",
+                  borderRadius: "0 0 24px 24px",
+                  fontFamily: '"JetBrains Mono", monospace',
+                }}
+              >
+                {code}
+              </SyntaxHighlighter>
+
+            </motion.div>
+
+          </section>
+
+        </div>
+
+      </div>
+
+    </section>
+  );
 }

@@ -1,61 +1,62 @@
 import "./Project.css";
 import { motion } from "framer-motion";
 
+import CollabBoard from "../../assets/projects/CollaBboard.png";
+import storybook from "../../assets/projects/storybook.png";
+import armoriq from "../../assets/projects/armoriq.png";
 import signaldock from "../../assets/projects/signaldock.png";
-import armoriq from "../../assets/projects/armoriq.jpg";
-import travelbuddy from "../../assets/projects/travelbuddy.jpg";
-import newsapp from "../../assets/projects/newsapp.jpg";
-import portfolio from "../../assets/projects/portfolio.jpg";
 
 const projects = [
   {
+    slug: "collabboard",
+    category: "COLLABORATION",
+
     number: "01",
 
-    title: "SignalDock",
+    title: "CollabBoard",
 
-    subtitle: "Production-ready Webhook Infrastructure",
+    subtitle: "Real-time Collaborative Workspace",
 
-    image: signaldock,
-
-    imageWidth: "94%",
+    image: CollabBoard,
 
     description:
-      "SignalDock is a production-inspired webhook delivery platform designed to process asynchronous events reliably at scale. Incoming events are persisted, queued through BullMQ, retried using exponential backoff and monitored through a real-time dashboard.",
+      "CollabBoard is a real-time collaborative workspace that enables teams to organize projects using interactive boards, lists and cards. Built with live synchronization, it allows multiple users to collaborate seamlessly without refreshing the page.",
 
     details:
-      "The platform includes dead-letter queues, replay functionality, delivery logs and Prometheus metrics, closely following the architecture used by modern webhook providers like Stripe and GitHub.",
+      "Features secure authentication, drag-and-drop workflows, file sharing and live updates powered by WebSockets.",
 
     tech: [
+      "React",
       "Node.js",
-      "TypeScript",
-      "BullMQ",
-      "Redis",
-      "Prisma",
-      "PostgreSQL",
-      "Docker"
+      "Express",
+      "Socket.IO",
+      "MongoDB",
+      "JWT",
+      "CSS"
     ],
 
-    github: "https://github.com/hardik07777",
+    github: "https://github.com/hardik07777/CollabBoard",
 
-    live: "#"
+    live: "https://collab-board-tfch.vercel.app/"
   },
 
   {
+    slug: "armoriq",
+    category: "AI PLATFORM",
+
     number: "02",
 
     title: "ArmorIQ",
 
-    subtitle: "Enterprise AI Agent Platform",
+    subtitle: "Secure Enterprise AI Agent Platform",
 
     image: armoriq,
 
-    imageWidth: "82%",
-
     description:
-      "ArmorIQ is a secure AI agent platform that combines Model Context Protocol (MCP) servers with policy-driven tool execution. Every tool invocation is validated before execution, making the system suitable for enterprise environments.",
+      "ArmorIQ is a secure AI agent platform that enables intelligent assistants to interact with external tools through the Model Context Protocol (MCP). Every action is validated by a policy engine, ensuring controlled, transparent and enterprise-ready AI automation.",
 
     details:
-      "It features approval workflows, audit logging, policy enforcement, custom MCP servers and an interactive dashboard for monitoring every AI action in real time.",
+      "Supports custom MCP servers, approval workflows, audit logs, policy enforcement and real-time monitoring of every AI tool invocation.",
 
     tech: [
       "React",
@@ -67,99 +68,73 @@ const projects = [
       "Gemini"
     ],
 
-    github: "https://github.com/hardik07777",
+    github: "https://github.com/hardik07777/armoriq_assignment",
 
-    live: "#"
+    live: "https://armoriq-assignment-frontend.vercel.app/"
   },
 
   {
+    slug: "storybook",
+    category: "DESIGN SYSTEM",
+
     number: "03",
 
-    title: "TravelBuddy",
+    title: "Storybook",
 
-    subtitle: "Collaborative Trip Planner",
+    subtitle: "Reusable UI Component System",
 
-    image: travelbuddy,
-
-    imageWidth: "72%",
+    image: storybook,
 
     description:
-      "TravelBuddy simplifies planning group trips through collaborative itineraries, authentication, live location support and interactive maps. The application combines a clean interface with a scalable backend.",
+      "A scalable Storybook-based component library built to accelerate frontend development through reusable, accessible and well-documented UI components. Designed with a developer-first approach for consistency across modern React applications.",
 
     details:
-      "Users can organize destinations, coordinate with friends and manage complete travel plans while experiencing seamless real-time collaboration.",
+      "Includes interactive stories, configurable components, interaction testing and a modular architecture for rapid development and seamless maintenance.",
 
     tech: [
       "React",
-      "Node.js",
-      "MongoDB",
-      "Socket.IO",
-      "Google Maps",
-      "Express"
+      "TypeScript",
+      "Storybook",
+      "Tailwind CSS",
+      "Zustand",
+      "TanStack Query"
     ],
 
-    github: "https://github.com/hardik07777",
+    github: "https://github.com/hardik07777/flexprice-storybook-assignment",
 
-    live: "#"
+    live: "https://flexprice-storybook-assignment-ljvo.vercel.app/"
   },
 
   {
+    slug: "signaldock",
+    category: "WEBHOOK PLATFORM",
+
     number: "04",
 
-    title: "News Aggregator",
+    title: "SignalDock",
 
-    subtitle: "Personalized News Platform",
+    subtitle: "Production-Ready Webhook Infrastructure",
 
-    image: newsapp,
-
-    imageWidth: "80%",
+    image: signaldock,
 
     description:
-      "A responsive news platform delivering personalized content from multiple trusted sources. Users can browse categories, search trending topics and bookmark important articles.",
+      "SignalDock is a production-inspired webhook delivery platform engineered to process asynchronous events reliably at scale. Incoming webhooks are persisted, queued through BullMQ and delivered with intelligent retry mechanisms.",
 
     details:
-      "The project focuses on responsive design, clean user experience and efficient API integration while demonstrating modern frontend architecture.",
+      "Implements exponential backoff, dead-letter queues, replay functionality, delivery logs and Prometheus metrics for reliable event processing.",
 
     tech: [
-      "React",
-      "Firebase",
-      "News API",
-      "Tailwind",
-      "Authentication"
+      "Node.js",
+      "TypeScript",
+      "BullMQ",
+      "Redis",
+      "Prisma",
+      "PostgreSQL",
+      "Docker"
     ],
 
-    github: "https://github.com/hardik07777",
+    github: "https://github.com/hardik07777/signaldock",
 
-    live: "#"
-  },
-
-  {
-    number: "05",
-
-    title: "Portfolio",
-
-    subtitle: "Personal Brand Experience",
-
-    image: portfolio,
-
-    imageWidth: "90%",
-
-    description:
-      "This portfolio was handcrafted to showcase engineering rather than simply display projects. Every interaction is designed with smooth motion, thoughtful spacing and premium minimalism.",
-
-    details:
-      "Built completely with React, Framer Motion and custom CSS, the website emphasizes performance, animations and elegant storytelling throughout every section.",
-
-    tech: [
-      "React",
-      "Framer Motion",
-      "CSS",
-      "Vite"
-    ],
-
-    github: "https://github.com/hardik07777",
-
-    live: "#"
   }
 ];
 
@@ -171,24 +146,54 @@ export default function Projects() {
 
         <motion.div
           className="projects-heading"
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: .8 }}
+          transition={{ duration: 0.8 }}
         >
 
-          <p>FEATURED WORK</p>
+          <div className="projects-label">
+            <span className="projects-line"></span>
+            <p>FEATURED WORK</p>
+          </div>
 
-          <h2>
+          <h2 className="projects-title">
             Selected
-            <br />
             Projects
           </h2>
 
-          <span>
-            Building products that combine engineering,
-            scalability and thoughtful user experiences.
-          </span>
+          
+          <div className="projects-extra">
+
+    <div className="projects-label">
+
+        <span className="projects-line"></span>
+
+        <p>
+            Explore more open source work and experiments on GitHub.
+        </p>
+
+    </div>
+
+    <div className="projects-socials">
+
+        <motion.a
+            href="https://github.com/hardik07777"
+            target="_blank"
+            rel="noreferrer"
+            whileHover={{ x: 5 }}
+        >
+            <i className="devicon-github-original"></i>
+
+            <span>GitHub</span>
+
+            ↗
+        </motion.a>
+
+        
+    </div>
+
+</div>
 
         </motion.div>
 
@@ -196,35 +201,59 @@ export default function Projects() {
 
           {projects.map((project, index) => (
 
-            <motion.div
-              key={project.title}
+            <motion.article
+              key={project.slug}
               className={`project ${index % 2 ? "reverse" : ""}`}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{
+                opacity: 0,
+                y: 70,
+                scale: 0.97
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1
+              }}
+              viewport={{
+                once: true,
+                amount: 0.05
+              }}
               transition={{
-                duration: .8,
-                delay: .15
+                duration: 0.9,
+                ease: [0.22, 1, 0.36, 1]
               }}
             >
 
-              <div className="project-image">
+              <div className={`project-image ${project.slug}`}>
 
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  style={{
-                    maxWidth: project.imageWidth
-                  }}
-                />
+    <div className="image-glow"></div>
 
-              </div>
+    <div className="image-shine"></div>
+
+    <div className={`image-wrapper ${project.slug}`}>
+
+        <img
+            src={project.image}
+            alt={project.title}
+        />
+
+    </div>
+
+</div>
 
               <div className="project-content">
 
-                <span className="number">
-                  {project.number}
-                </span>
+                <div className="project-meta">
+
+                  <span className="number">
+                    {project.number}
+                  </span>
+
+                  <span className="category">
+                    {project.category}
+                  </span>
+
+                </div>
 
                 <h3>{project.title}</h3>
 
@@ -236,11 +265,28 @@ export default function Projects() {
 
                 <div className="tech-stack">
 
-                  {project.tech.map((tech) => (
+                  {project.tech.map((tech, i) => (
 
-                    <span key={tech}>
+                    <motion.span
+                      key={tech}
+                      initial={{
+                        opacity: 0,
+                        y: 10
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0
+                      }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: i * 0.05
+                      }}
+                      whileHover={{
+                        y: -3
+                      }}
+                    >
                       {tech}
-                    </span>
+                    </motion.span>
 
                   ))}
 
@@ -248,27 +294,31 @@ export default function Projects() {
 
                 <div className="project-links">
 
-                  <a
+                  <motion.a
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
+                    whileHover={{ x: 5 }}
                   >
-                    GitHub ↗
-                  </a>
+                    Source Code ↗
+                  </motion.a>
 
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Live Demo ↗
-                  </a>
+                 {project.live && (
+  <motion.a
+    href={project.live}
+    target="_blank"
+    rel="noreferrer"
+    whileHover={{ x: 5 }}
+  >
+    View Project ↗
+  </motion.a>
+)}
 
                 </div>
 
               </div>
 
-            </motion.div>
+            </motion.article>
 
           ))}
 

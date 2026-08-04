@@ -1,91 +1,123 @@
-/* =====================================================
-   SECTION
-===================================================== */
+/* ===========================================
+   PROJECTS
+=========================================== */
 
 .projects{
-    background:#000;
-    color:#fff;
-    padding:160px 0;
-    overflow:hidden;
+    position: relative;
+    overflow: hidden;
+
+    background: #050505;
+
+    color: #fff;
+
+    padding: 100px 0 140px;
 }
 
+.projects::before{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+        rgba(255,255,255,.035),
+        transparent 35%),
+
+        radial-gradient(circle at 90% 80%,
+        rgba(255,40,40,.04),
+        transparent 35%);
+
+    pointer-events: none;
+}
 .projects-container{
-    width:min(1500px,92%);
+
+    width:min(1700px,97%);
+
     margin:auto;
+
+    position:relative;
+
+    z-index:2;
 }
-
-/* =====================================================
-   HEADING
-===================================================== */
-
 .projects-heading{
 
-    margin-bottom:130px;
+    margin-bottom:50px;
 }
 
-.projects-heading p{
+.projects-label{
 
-    color:#8b8b8b;
+    display:flex;
 
-    font-size:.85rem;
+    align-items:center;
 
-    letter-spacing:7px;
+    gap:24px;
 
-    margin-bottom:22px;
+    margin-bottom:28px;
+}
+
+.projects-line{
+
+    width:72px;
+
+    height:1px;
+
+    background:#d93b3b;
+}
+
+.projects-label p{
+
+    font-size:.78rem;
+
+    letter-spacing:.38em;
 
     text-transform:uppercase;
+
+    color:#7d7d7d;
 }
 
-.projects-heading h2{
-
-    font-size:clamp(4.5rem,8vw,7.5rem);
-
+.projects-title{
+     font-size:clamp(5.5rem,10vw,9rem);
     line-height:.88;
+    letter-spacing:-4px;
+    font-weight:600;
 
-    font-weight:700;
-
-    letter-spacing:-5px;
-
-    margin-bottom:30px;
+    margin:0 0 60px;
 }
 
-.projects-heading span{
+.projects-description{
 
     display:block;
 
-    max-width:620px;
+    max-width:720px;
 
-    color:#8d8d8d;
-
-    line-height:1.9;
+    color:#868686;
 
     font-size:1.05rem;
+
+    line-height:1.9;
 }
-
-/* =====================================================
-   PROJECT LIST
-===================================================== */
-
 .projects-list{
+        margin-top: 0;
+
 
     display:flex;
 
     flex-direction:column;
 
-    gap:170px;
+    gap:180px;
 }
-
-/* =====================================================
-   PROJECT
-===================================================== */
-
 .project{
 
     position:relative;
 
     display:grid;
 
-    grid-template-columns:58% 42%;
+    grid-template-columns:
+
+    minmax(0,7fr)
+
+    minmax(0,5fr);
 
     gap:90px;
 
@@ -94,7 +126,11 @@
 
 .project.reverse{
 
-    grid-template-columns:42% 58%;
+    grid-template-columns:
+
+    minmax(0,5fr)
+
+    minmax(0,7fr);
 }
 
 .project.reverse .project-image{
@@ -106,14 +142,19 @@
 
     order:1;
 }
-
-/* =====================================================
-   IMAGE
-===================================================== */
-
 .project-image{
 
     position:relative;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    background:#0b0b0b;
+
+    min-height:420px;
 
     display:flex;
 
@@ -121,196 +162,221 @@
 
     align-items:center;
 
-    overflow:hidden;
+    transition:
 
-    background:#090909;
+    transform .7s cubic-bezier(.22,1,.36,1),
 
-    border-radius:24px;
+    border-color .7s,
 
-    border:1px solid rgba(255,255,255,.06);
-
-    padding:55px;
-
-    transition:.5s cubic-bezier(.22,.61,.36,1);
-
-    box-shadow:
-
-        0 20px 60px rgba(0,0,0,.30),
-
-        0 80px 160px rgba(0,0,0,.35);
+    box-shadow .7s;
 }
-
-/* engineering grid */
-
-.project-image::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background-image:
-
-        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-
-        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-
-    background-size:32px 32px;
-
-    pointer-events:none;
-}
-
-/* border glow */
-
-.project-image::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:24px;
-
-    border:1px solid rgba(255,255,255,.05);
-
-    pointer-events:none;
-}
-
 .project-image img{
 
-    width:100%;
+    display:block;
+
+    width:90%;
 
     height:auto;
 
     object-fit:contain;
 
-    object-position:center;
-
-    transition:.9s cubic-bezier(.22,.61,.36,1);
-
-    position:relative;
-
-    z-index:2;
-
-    filter:
-
-        drop-shadow(0 35px 80px rgba(0,0,0,.45));
+    transition:
+        transform .8s cubic-bezier(.22,1,.36,1);
 }
 
-.project:hover .project-image{
 
-    transform:translateY(-10px);
+.project-tag{
 
-    box-shadow:
+    position:absolute;
 
-        0 35px 80px rgba(0,0,0,.45),
+    top:28px;
 
-        0 120px 200px rgba(0,0,0,.45);
+    right:28px;
+
+    padding:
+
+    9px 16px;
+
+    border-radius:999px;
+
+    background:
+
+    rgba(255,255,255,.06);
+
+    backdrop-filter:blur(12px);
+
+    font-size:.68rem;
+
+    letter-spacing:.25em;
+
+    text-transform:uppercase;
+
+    color:#cfcfcf;
+
+    z-index:4;
+}
+.image-wrapper{
+    width:100%;
+    height:100%;
+
+    display:flex;
+}
+.image-glow{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(255,255,255,.05),
+
+    transparent 70%
+
+    );
+
+    opacity:0;
+
+    transition:.8s;
 }
 
-.project:hover img{
+.project:hover .image-glow{
 
-    transform:
+    opacity:1;
+}
+.image-shine{
 
-        scale(1.03)
+    position:absolute;
 
-        translateY(-4px);
+    inset:0;
+
+    overflow:hidden;
 }
 
-/* =====================================================
-   CONTENT
-===================================================== */
-
-.project-content{
-
-    position:relative;
-
-    max-width:520px;
-}
-
-/* small divider */
-
-.project-content::before{
+.image-shine::after{
 
     content:"";
 
-    display:block;
+    position:absolute;
 
-    width:70px;
+    top:0;
 
-    height:2px;
+    left:-120%;
 
-    background:#fff;
+    width:35%;
 
-    opacity:.12;
+    height:100%;
 
-    margin-bottom:28px;
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.08),
+
+    transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    transition:1.2s;
 }
 
-/* =====================================================
-   NUMBER
-===================================================== */
+.project:hover .image-shine::after{
 
+    left:150%;
+}
+/* ===========================================
+   PROJECT CONTENT
+=========================================== */
+
+.project-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    max-width:520px;
+
+    min-width:0;
+}
+.project-meta{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:26px;
+}
 .number{
-
-    display:block;
-
-    color:#6f6f6f;
 
     font-size:.8rem;
 
     font-weight:600;
 
-    letter-spacing:6px;
+    color:#6f6f6f;
 
-    margin-bottom:20px;
+    letter-spacing:.35em;
 
     text-transform:uppercase;
 }
+.category{
 
-/* =====================================================
-   TITLE
-===================================================== */
+    color:#d53c3c;
 
+    font-size:.72rem;
+
+    font-weight:600;
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+}
 .project-content h3{
 
-    font-size:clamp(3rem,4vw,4.6rem);
+    margin:0;
 
-    line-height:.92;
+    font-size:clamp(3rem,5vw,4.8rem);
 
-    letter-spacing:-2px;
+    line-height:.9;
 
-    margin-bottom:14px;
+    font-weight:600;
 
-    transition:.45s;
+    letter-spacing:-3px;
+
+    transition:.5s;
 }
 
 .project:hover h3{
 
-    transform:translateX(6px);
+    transform:translateX(4px);
 }
-
-/* =====================================================
-   SUBTITLE
-===================================================== */
-
 .project-content h4{
 
-    color:#c8c8c8;
+    margin:
 
-    font-size:1.25rem;
+    18px 0 34px;
 
-    font-weight:500;
+    font-size:1.2rem;
 
-    margin-bottom:26px;
+    font-weight:400;
+
+    color:#b8b8b8;
+
+    line-height:1.6;
 }
-
-/* =====================================================
-   DESCRIPTION
-===================================================== */
-
 .project-content p{
 
     color:#8d8d8d;
@@ -319,12 +385,22 @@
 
     line-height:1.95;
 
-    margin-bottom:22px;
+    margin-bottom:24px;
 }
-/* =====================================================
-   TECH STACK
-===================================================== */
+.project-content p:last-of-type{
 
+    color:#6f6f6f;
+
+    font-size:.95rem;
+
+    border-left:
+
+    2px solid rgba(255,255,255,.08);
+
+    padding-left:18px;
+
+    margin-bottom:42px;
+}
 .tech-stack{
 
     display:flex;
@@ -333,45 +409,42 @@
 
     gap:12px;
 
-    margin-top:36px;
-
-    margin-bottom:42px;
+    margin-bottom:48px;
 }
-
 .tech-stack span{
 
-    padding:10px 18px;
+    padding:
+
+    10px 18px;
 
     border-radius:999px;
 
-    border:1px solid rgba(255,255,255,.08);
+    border:
+
+    1px solid rgba(255,255,255,.08);
 
     background:#0d0d0d;
 
-    color:#d5d5d5;
+    color:#bdbdbd;
 
-    font-size:.8rem;
+    font-size:.74rem;
 
-    letter-spacing:.8px;
+    letter-spacing:.08em;
 
-    transition:.35s cubic-bezier(.22,.61,.36,1);
+    transition:
 
-    cursor:default;
+    .35s cubic-bezier(.22,1,.36,1);
 }
-
 .tech-stack span:hover{
 
     background:#fff;
 
     color:#000;
 
-    transform:translateY(-4px);
+    transform:
+
+    translateY(-3px);
 }
-
-/* =====================================================
-   LINKS
-===================================================== */
-
 .project-links{
 
     display:flex;
@@ -380,22 +453,18 @@
 
     align-items:center;
 }
-
 .project-links a{
-
-    color:#fff;
-
-    text-decoration:none;
-
-    font-size:1rem;
-
-    font-weight:500;
 
     position:relative;
 
+    color:#fff;
+
+    font-size:.95rem;
+
+    text-decoration:none;
+
     transition:.35s;
 }
-
 .project-links a::after{
 
     content:"";
@@ -415,29 +484,19 @@
     transition:.35s;
 }
 
-.project-links a:hover{
-
-    color:#dcdcdc;
-}
-
 .project-links a:hover::after{
 
     width:100%;
 }
-
-/* =====================================================
-   SEPARATOR
-===================================================== */
-
 .project::after{
 
     content:"";
 
     position:absolute;
 
-    bottom:-85px;
-
     left:0;
+
+    bottom:-110px;
 
     width:100%;
 
@@ -445,323 +504,194 @@
 
     background:
 
-        linear-gradient(
+    linear-gradient(
 
-            to right,
+    90deg,
 
-            transparent,
+    transparent,
 
-            rgba(255,255,255,.08),
+    rgba(255,255,255,.08),
 
-            transparent
+    transparent
 
-        );
+    );
 }
 
 .project:last-child::after{
 
     display:none;
 }
-
-/* =====================================================
-   SMALL FLOATING LINE
-===================================================== */
-
-.project-image .engineering-line{
-
-    position:absolute;
-
-    width:120px;
-
-    height:1px;
-
-    background:rgba(255,255,255,.08);
-
-    top:36px;
-
-    left:36px;
-}
-
-.project-image .engineering-line::after{
-
-    content:"";
-
-    position:absolute;
-
-    right:-4px;
-
-    top:-2px;
-
-    width:5px;
-
-    height:5px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.25);
-}
-
-/* =====================================================
-   IMAGE CORNER LABEL
-===================================================== */
-
-.project-image .label{
-
-    position:absolute;
-
-    right:34px;
-
-    top:34px;
-
-    font-size:.72rem;
-
-    color:#666;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    z-index:5;
-}
-
-/* =====================================================
-   MICRO ANIMATIONS
-===================================================== */
-
 .project *{
 
-    will-change:transform;
+    min-width:0;
+
+    box-sizing:border-box;
 }
-
-.project:hover .number{
-
-    color:#fff;
-
-    transition:.35s;
-}
-
-.project:hover h4{
-
-    color:#fff;
-
-    transition:.35s;
-}
-
-.project:hover p{
-
-    color:#b8b8b8;
-
-    transition:.35s;
-}
-
-/* =====================================================
-   LARGE SCREEN
-===================================================== */
-
-@media(min-width:1700px){
-
-.projects-container{
-
-    width:1650px;
-}
-
-.project{
-
-    gap:120px;
-}
-
-.project-image{
-
-    padding:70px;
-}
-
-.project-content{
-
-    max-width:600px;
-}
-
-.project-content h3{
-
-    font-size:5rem;
-}
-
-.projects-list{
-
-    gap:220px;
-}
-
-}
-
-/* =====================================================
-   LAPTOP
-===================================================== */
-
-@media(max-width:1200px){
-
-.projects{
-
-    padding:120px 0;
-}
-
-.project{
-
-    gap:60px;
-}
-
-.projects-list{
-
-    gap:120px;
-}
-
-.project-content{
-
-    max-width:100%;
-}
-
-.project-content h3{
-
-    font-size:3rem;
-}
-
-.project-image{
-
-    padding:34px;
-}
-
-}
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media(max-width:900px){
-
-.projects-heading{
-
-    margin-bottom:80px;
-}
-
-.projects-heading h2{
-
-    font-size:3.5rem;
-}
+@media(max-width:1000px){
 
 .project,
 
 .project.reverse{
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+flex-direction:column;
 }
 
 .project-image{
 
-    order:1 !important;
-
-    width:100%;
-
-    padding:26px;
+order:1 !important;
 }
 
 .project-content{
 
-    order:2 !important;
+order:2 !important;
 
-    max-width:100%;
-}
-
-.project-content h3{
-
-    font-size:2.6rem;
-}
-
-.project-links{
-
-    gap:26px;
+max-width:100%;
 }
 
 .projects-list{
 
-    gap:90px;
+gap:120px;
+}
+}
+/* ==========================
+   CollabBoard
+========================== */
+
+.image-wrapper.collabboard{
+    justify-content:flex-start;
+    align-items:center;
+
+    padding-left:30px;
 }
 
-.project::after{
-
-    bottom:-45px;
-}
-
-}
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:600px){
-
-.projects{
-
-    padding:80px 0;
-}
-
-.projects-container{
-
+.image-wrapper.collabboard img{
     width:92%;
+    border-radius:22px;
 }
 
-.projects-heading h2{
+/* ==========================
+   ArmorIQ
+========================== */
 
-    font-size:2.8rem;
+.image-wrapper.armoriq{
+    justify-content:center;
+    align-items:center;
 }
 
-.projects-heading span{
-
-    font-size:.95rem;
+.image-wrapper.armoriq img{
+    width:62%;
+    transform:scale(1.25);
+    border-radius:10px;
 }
 
-.project-content h3{
+/* ==========================
+   Storybook
+========================== */
 
-    font-size:2.1rem;
-}
-
-.project-content h4{
-
-    font-size:1rem;
-}
-
-.project-content p{
-
-    font-size:.94rem;
-
-    line-height:1.8;
-}
-
-.tech-stack{
-
-    gap:8px;
-}
-
-.tech-stack span{
-
-    font-size:.72rem;
-
-    padding:8px 14px;
-}
-
-.project-links{
-
-    flex-direction:column;
-
+.image-wrapper.storybook{
+    justify-content:flex-end;
     align-items:flex-start;
 
-    gap:18px;
+    padding-top:35px;
+    padding-right:30px;
 }
 
-.project-image{
-
-    border-radius:18px;
-
-    padding:20px;
+.image-wrapper.storybook img{
+    width:90%;
+    border-radius:22px;
 }
 
+/* ==========================
+   SignalDock
+========================== */
+
+.image-wrapper.signaldock{
+    justify-content:center;
+    align-items:flex-end;
+
+    padding-bottom:25px;
+}
+
+.image-wrapper.signaldock img{
+    width:82%;
+    border-radius:82px;
+}
+/* ===========================================
+   EXTRA CTA
+=========================================== */
+
+.projects-extra{
+
+    margin-top:10;
+
+    margin-bottom:80px;
+}
+.projects-socials{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    margin-top:45px;
+}
+.projects-socials a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:.95rem;
+
+    transition:.35s;
+}
+.projects-socials a:hover{
+
+    color:#ff3d3d;
+}
+.projects-socials a{
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-size:1.2rem;
+    font-weight:500;
+
+    transition:.35s;
+}
+.image-wrapper.collabboard{
+
+    justify-content:flex-start;
+
+    padding-left:30px;
+}
+
+
+
+.project:hover .image-wrapper.collabboard img{
+    transform:translateX(-10px) scale(1.04);
+}
+
+.project:hover .image-wrapper.armoriq img{
+    transform:scale(1.30) rotate(-2deg);
+}
+
+.project:hover .image-wrapper.storybook img{
+    transform:translateY(-10px) scale(1.05);
+}
+
+.project:hover .image-wrapper.signaldock img{
+    transform:translateY(8px) scale(1.06);
 }

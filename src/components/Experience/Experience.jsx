@@ -4,44 +4,46 @@ import { motion } from "framer-motion";
 import mercor from "../../assets/experience/mercor.png";
 import cantilever from "../../assets/experience/cantilever.png";
 import mait from "../../assets/experience/mait.png";
+import airdawg from "../../assets/experience/airdawg.jpg";
 
 const experiences = [
-  {
-    logo: mercor,
-    date: "May 2026 – Jul 2026",
-    role: "Software Engineer Intern",
-    company: "Mercor",
-    points: [
-      "Built scalable backend services using Node.js and TypeScript.",
-      "Worked on production APIs and internal developer tooling.",
-      "Collaborated with engineers on high-impact software features.",
-      "Optimized performance and debugging workflows."
-    ]
-  },
-  {
-    logo: cantilever,
-    date: "2025",
-    role: "Full Stack Developer Intern",
-    company: "Cantilever Labs",
-    points: [
-      "Developed responsive React applications.",
-      "Built backend APIs with Express and MongoDB.",
-      "Implemented authentication and REST services.",
-      "Worked in an Agile product environment."
-    ]
-  },
-  {
-    logo: mait,
-    date: "2023 – Present",
-    role: "B.Tech Electronics & Communication",
-    company: "MAIT",
-    points: [
-      "Built multiple production-grade full stack applications.",
-      "Solved 1000+ coding problems.",
-      "Strong foundation in DSA and System Design.",
-      "Actively exploring Distributed Systems and AI."
-    ]
-  }
+{
+  logo: airdawg,
+  date: "Jul 2026 – Present",
+  role: "AI Systems Evaluation Intern",
+  company: "AirDawg Labs",
+  points: [
+    "Designed and implemented complex AI evaluation tasks using Docker, Python, and Linux-based environments to benchmark autonomous coding agents.",
+    "Built deterministic reference solutions and comprehensive automated test suites to validate agent behavior across diverse real-world scenarios.",
+    "Collaborated with the AI evaluation team to improve task quality, reproducibility, and benchmarking accuracy for large language models.",
+    "Worked extensively with Git, CI workflows, and containerized development while contributing to high-quality datasets for AI systems evaluation."
+  ]
+},
+{
+  logo: mercor,
+  date: "May 2026 – Jul 2026",
+  role: "Software Engineer Intern",
+  company: "Mercor",
+  points: [
+    "Developed scalable backend services and REST APIs using Node.js and TypeScript, focusing on clean architecture and maintainable code.",
+    "Designed internal developer tools and automation workflows that streamlined engineering processes and improved team productivity.",
+    "Collaborated closely with cross-functional engineers to deliver production-ready features while following modern software development practices.",
+    "Improved application performance by identifying bottlenecks, optimizing backend logic, and debugging complex production issues."
+  ]
+},
+{
+  logo: cantilever,
+  date: "2025",
+  role: "Full Stack Developer Intern",
+  company: "Cantilever Labs",
+  points: [
+    "Built responsive and reusable user interfaces with React while maintaining a consistent and accessible user experience across devices.",
+    "Developed backend services and RESTful APIs using Express.js and MongoDB to support scalable full-stack web applications.",
+    "Implemented secure authentication, role-based access control, and efficient database operations for production-ready features.",
+    "Collaborated in an Agile development environment, participating in feature planning, code reviews, debugging, and iterative product improvements."
+  ]
+}
+  
 ];
 
 export default function Experience() {
@@ -50,8 +52,6 @@ export default function Experience() {
 
       <div className="experience-container">
 
-        {/* Heading */}
-
         <motion.div
           className="experience-heading"
           initial={{ opacity: 0, y: 40 }}
@@ -59,18 +59,17 @@ export default function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
+          <div className="experience-label">
+            <span className="experience-line"></span>
+            <p>CAREER</p>
+          </div>
 
-          <h2
-  className="experience-title"
-  style={{ fontFamily: "Outfit, sans-serif" }}
->
-    Professional
-    <br />
-    Experience
-</h2>
+          <h2 className="experience-title">
+            Professional
+            <br />
+            Experience
+          </h2>
         </motion.div>
-
-        {/* Grid */}
 
         <div className="experience-grid">
 
@@ -83,11 +82,11 @@ export default function Experience() {
                 className="experience-card"
                 initial={{
                   opacity: 0,
-                  x: index % 2 === 0 ? -60 : 60
+                  y: 40
                 }}
                 whileInView={{
                   opacity: 1,
-                  x: 0
+                  y: 0
                 }}
                 viewport={{ once: true }}
                 transition={{
@@ -96,52 +95,61 @@ export default function Experience() {
                 }}
               >
 
-                {/* Logo */}
+                {/* LEFT SECTION */}
 
-                <div className="experience-logo">
+                <div className="experience-left">
 
-                  <img
-                    src={item.logo}
-                    alt={item.company}
-                 className={item.company === "MAIT" ? "" : "white-logo"  }
+                  <div className="experience-logo">
 
-                  />
+                    <img
+                      src={item.logo}
+                      alt={item.company}
+                      className={
+                        item.company === "AirDawg Labs"
+                          ? "black-logo"
+                          : "white-logo"
+                      }
+                    />
+
+                  </div>
+
+                  <div className="experience-info">
+
+                    <span className="exp-date">
+                      {item.date}
+                    </span>
+
+                    <h3>
+                      {item.role}
+                    </h3>
+
+                    <h4>
+                      {item.company}
+                    </h4>
+
+                  </div>
 
                 </div>
 
-                {/* Info */}
+                {/* RIGHT SECTION */}
 
-                <div className="experience-info">
+                <div className="experience-right">
 
-                  <span className="exp-date">
-                    {item.date}
-                  </span>
+                  <div className="experience-points">
 
-                  <h3>
-                    {item.role}
-                  </h3>
+                    <ul>
 
-                  <h4>
-                    {item.company}
-                  </h4>
+                      {item.points.map((point, i) => (
 
-                </div>
+                        <li key={i}>
+                          {point}
+                        </li>
 
-                {/* Points */}
+                      ))}
 
-                <div className="experience-points">
+                    </ul>
 
-                  <ul>
-
-                    {item.points.map((point, i) => (
-
-                      <li key={i}>
-                        {point}
-                      </li>
-
-                    ))}
-
-                  </ul>
+                  </div>
 
                 </div>
 
@@ -158,3 +166,17 @@ export default function Experience() {
     </section>
   );
 }
+
+
+// {
+//     logo: mait,
+//     date: "2023 – Present",
+//     role: "B.Tech Electronics & Communication",
+//     company: "MAIT",
+//     points: [
+//       "Built multiple production-grade full stack applications.",
+//       "Solved 1000+ coding problems.",
+//       "Strong foundation in DSA and System Design.",
+//       "Actively exploring Distributed Systems and AI."
+//     ]
+//   }

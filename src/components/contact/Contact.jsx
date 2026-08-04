@@ -1,96 +1,159 @@
 import "./Contact.css";
 import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 import contactImage from "../../assets/videos/contact.jpg";
 
-
 export default function Contact() {
+  const form = useRef();
+
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    setStatus("loading");
+
+    try {
+      const formData = new FormData(form.current);
+
+      formData.append("_captcha", "false");
+      formData.append("_template", "table");
+      formData.append("_subject", "New Portfolio Contact!");
+
+      const response = await fetch(
+        "https://formsubmit.co/ajax/hardikgoel07@gmail.com",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        form.current.reset();
+        setStatus("success");
+
+        setTimeout(() => {
+          setStatus("idle");
+        }, 5000);
+      } else {
+        setStatus("error");
+
+        setTimeout(() => {
+          setStatus("idle");
+        }, 5000);
+      }
+    } catch (err) {
+      console.error(err);
+
+      setStatus("error");
+
+      setTimeout(() => {
+        setStatus("idle");
+      }, 5000);
+    }
+  };
+
   return (
     <section className="contact">
 
-      <div className="contact-container">
+      <motion.div
+        className="contact-heading"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="contact-label">
+          <div className="label-line"></div>
+          <span>CONTACT</span>
+        </div>
 
-        {/* LEFT */}
+        <h2>
+          Let's build something
+          <br />
+          Extraordinary.
+        </h2>
+      </motion.div>
+
+      <div className="contact-container">
 
         <motion.div
           className="contact-media"
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: .8 }}
+          transition={{ duration: 0.8 }}
         >
-
-              <img
-        src={contactImage}
-        alt="Workspace"
-        className="contact-image"
-    />
-
+          <img
+            src={contactImage}
+            alt="Workspace"
+            className="contact-image"
+          />
         </motion.div>
-
-        {/* RIGHT */}
 
         <motion.div
           className="contact-form"
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: .8 }}
+          transition={{ duration: 0.8 }}
         >
-
-          <span>CONTACT</span>
-
-          <h2>
-            Let's Build
-            <br />
-            Something Great.
-          </h2>
 
           <p>
             Whether it's an internship,
-            collaboration or just saying hello,
+            collaboration, or just saying hello,
             I'd love to hear from you.
           </p>
 
+          {status === "success" && (
+            <div className="success-message">
+              ✓ Message received. I'll get back to you soon.
+            </div>
+          )}
+
+          {status === "error" && (
+            <div className="error-message">
+              ✕ Something went wrong. Please try again.
+            </div>
+          )}
+
           <form
-            action="https://formsubmit.co/hardikgoel07@gmail.com"
-            method="POST"
+            ref={form}
+            onSubmit={sendEmail}
           >
 
             <input
-              type="hidden"
-              name="_captcha"
-              value="false"
-            />
-
-            <input
-              type="hidden"
-              name="_template"
-              value="table"
-            />
-
-            <input
               type="text"
-              name="Name"
+              name="name"
               placeholder="Your Name"
               required
             />
 
             <input
               type="email"
-              name="Email"
+              name="email"
               placeholder="Email Address"
               required
             />
 
             <textarea
-              name="Message"
+              name="message"
               placeholder="Tell me about your project..."
               rows="6"
               required
             />
 
-            <button type="submit">
-              Send Message →
+            <button
+              type="submit"
+              disabled={status === "loading"}
+            >
+              {status === "loading"
+                ? "Sending..."
+                : status === "success"
+                ? "Sent ✓"
+                : "Send Message →"}
             </button>
 
           </form>
@@ -105,7 +168,6 @@ export default function Contact() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-
         <div className="quote-line"></div>
 
         <h3>
@@ -113,7 +175,6 @@ export default function Contact() {
         </h3>
 
         <span>— Black Clover</span>
-
       </motion.div>
 
     </section>

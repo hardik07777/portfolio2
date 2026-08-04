@@ -1,0 +1,466 @@
+/* =========================================================
+   LEETCODE CARD
+========================================================= */
+
+
+.leetcode-card{
+    position:relative;
+
+    width:590px;
+
+    padding:0 ;
+
+
+    background:linear-gradient(
+    180deg,
+    rgba(12,12,12,.18),
+    rgba(12,12,12,.05)
+);
+
+    border:none;
+
+    box-shadow:none;
+
+    overflow:visible;
+}
+.leetcode-card * {
+    text-decoration: none !important;
+}
+
+.leetcode-card:hover{
+
+    border-color:rgba(255,80,80,.25);
+
+    box-shadow:
+    0 40px 120px rgba(0,0,0,.7),
+    0 0 140px rgba(180,30,30,.15);
+
+}
+.leetcode-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:80px;
+
+    width:520px;
+
+
+height:220px;
+opacity:.8;
+filter:blur(110px);
+
+
+    transform:translateX(-50%);
+
+    background:
+        radial-gradient(
+            rgba(160,20,20,.18),
+            transparent 70%
+        );
+
+    
+
+    z-index:-1;
+}
+/* .leetcode-card::after{
+    
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(255,255,255,.025),
+        transparent 80%
+    );
+
+    transform:translateX(-100%);
+
+    transition:1s;
+
+} */
+.leetcode-card:hover::after{
+
+    transform:translateX(100%);
+
+}
+.leetcode-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:14px;
+
+}
+.leetcode-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.status-dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 15px #ff3d3d,
+    0 0 35px rgba(255,50,50,.5);
+
+}
+.leetcode-left p{
+
+    font-family:"Inter",sans-serif;
+
+        color:rgba(255,255,255,.55);
+
+
+    font-size:.62rem;
+
+    letter-spacing:.45em;
+
+    text-transform:uppercase;
+
+}
+
+
+.heatmap-wrapper{
+
+    position:relative;
+
+    margin-bottom:12px;
+
+}
+.leetcode-heatmap{
+        opacity:.92;
+
+
+display:grid;
+padding:0 12px;
+
+grid-template-columns:repeat(44,9px);
+
+grid-template-rows:repeat(7,9px);
+
+gap:4px;
+
+justify-content:center;
+ filter:
+        drop-shadow(0 0 14px rgba(255,70,70,.12));
+
+}
+.heat-cell{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:2px;
+
+    transition:
+        transform .25s,
+        background .25s,
+        box-shadow .25s;
+
+}
+.level-0{
+    background:rgba(255,255,255,.02);
+}
+
+.level-1{
+
+    background:#3d1111;
+
+}
+
+.level-2{
+
+    background:#6e1818;
+
+}
+
+.level-3{
+
+    background:#b22222;
+
+}
+
+.level-4{
+
+     background:#ff5b5b;
+
+    box-shadow:
+        0 0 10px rgba(255,70,70,.4);
+
+    animation:pulse 2.5s infinite;
+
+}
+.heat-cell:hover{
+
+    transform:scale(1.4);
+
+    box-shadow:
+
+    0 0 18px rgba(255,60,60,.8);
+
+}
+
+
+.heatmap-wrapper{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.months{
+    width: calc(44 * 9px + 43 * 4px);
+    margin: 8px auto 0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    color:rgba(255,255,255,.38);
+
+    font-family:"Inter",sans-serif;
+    font-size:.56rem;
+    font-weight:500;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+.floating-glow{
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        rgba(255,45,45,.18),
+        transparent 70%
+    );
+
+    filter:blur(45px);
+
+    right:-90px;
+    top:-80px;
+
+    animation:floatGlow 7s ease-in-out infinite;
+
+    pointer-events:none;
+}
+@keyframes floatGlow{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(18px);
+    }
+
+}
+.leetcode-card{
+    
+
+    position:relative;
+
+}
+
+@keyframes borderMove{
+
+    from{
+
+        background-position:0%;
+
+    }
+
+    to{
+
+        background-position:400%;
+
+    }
+
+}
+@keyframes pulse{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        box-shadow:
+        0 0 12px rgba(255,50,50,.35);
+
+    }
+
+    50%{
+
+        transform:scale(1.18);
+
+        box-shadow:
+        0 0 22px rgba(255,50,50,.9);
+
+    }
+
+}
+.leetcode-profile{
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    text-decoration:none;
+
+    font-family:"Inter",sans-serif;
+    font-size:.76rem;
+    font-weight:500;
+
+    color:rgba(255,255,255,.72);
+
+    transition:.3s ease;
+        transform: translateX(-10px); /* Move left */
+
+}
+
+.leetcode-profile:hover{
+    color:#fff;
+}
+
+.leetcode-profile .arrow{
+    font-size:.72rem;
+
+    opacity:.55;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+.leetcode-profile:hover .arrow{
+    opacity:1;
+    transform:translate(2px,-2px);
+}
+
+
+@keyframes floatCard{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+.hero-leetcode{
+
+    position:absolute;
+
+    right:10px;
+    bottom:5px;
+
+    opacity:.92;
+    z-index: 10;
+
+    pointer-events:auto;
+}
+
+/* ===========================
+   STATS
+=========================== */
+
+.leetcode-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:34px;
+
+    margin-top:12px;
+}
+
+
+.stat{
+    padding:8px 4px;
+
+    text-align:center;
+
+    border-radius:10px;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.stat h2{
+
+    margin:0;
+
+    font-family:"Outfit",sans-serif;
+
+    font-size:1.8rem;      /* ↓ from 2.2rem */
+    font-weight:600;
+
+    color:#fff;
+
+    line-height:1;
+
+    transition:
+        transform .25s ease,
+        color .25s ease;
+}
+
+.stat span{
+
+    display:block;
+
+    margin-top:7px;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:.54rem;       /* ↓ from .62rem */
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,.55);
+
+    transition:color .25s ease;
+}
+
+.stat:hover{
+    transform:translateY(-4px);
+}
+
+
+
+.stat:hover span{
+    color:rgba(255,255,255,.85);
+}

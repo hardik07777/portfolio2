@@ -1,10 +1,11 @@
 import "./about.css";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-const code = `const developer = {
+const desktopCode = `const developer = {
 
   name: "Hardik Goel",
 
@@ -26,8 +27,63 @@ const code = `const developer = {
 };
 
 export default developer;`;
+const mobileCode = `const developer = {
+
+  name: "Hardik Goel",
+
+  role: "Full Stack Developer",
+
+  experience: "2+ Years",
+
+  techStack: [
+    "React",
+    "Node.js",
+    "Express",
+    "TypeScript",
+    "Redis",
+    "PostgreSQL",
+    "Docker",
+    "Prisma"
+  ],
+
+  learning: [
+    "System Design",
+    "Kubernetes",
+    "AWS"
+  ],
+
+  interests: [
+    "Competitive Programming",
+    "Table Tennis",
+    "Open Source"
+  ],
+
+  contact: {
+    email: "hardikgoel07@gmail.com",
+  },
+
+  availableForWork: true
+};
+
+export default developer;`;
+
+
 
 export default function About() {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Ensure correct value on mount
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <section className="about-section">
 
@@ -77,23 +133,26 @@ export default function About() {
                 </div>
               </div>
 
-              <SyntaxHighlighter
-                language="javascript"
-                style={oneDark}
-                showLineNumbers
-                wrapLongLines
-                customStyle={{
-                  background: "#0d1117",
-                  margin: 0,
-                  padding: "32px 42px",
-                  fontSize: "18px",
-                  lineHeight: "1.9",
-                  borderRadius: "0 0 24px 24px",
-                  fontFamily: '"JetBrains Mono", monospace',
-                }}
-              >
-                {code}
-              </SyntaxHighlighter>
+
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={oneDark}
+                  showLineNumbers={!isMobile}
+                  wrapLongLines
+                  customStyle={{
+                    background: "#0d1117",
+                    margin: 0,
+                    padding: isMobile ? "18px 16px" : "32px 42px",
+                    fontSize: isMobile ? "12px" : "18px",
+                    lineHeight: isMobile ? "1.7" : "1.9",
+                    borderRadius: "0 0 24px 24px",
+                    fontFamily: '"JetBrains Mono", monospace',
+                    overflowX: "auto",
+                    whiteSpace: isMobile ? "pre-wrap" : "pre",
+                  }}
+                >
+                  {isMobile ? mobileCode : desktopCode}
+                </SyntaxHighlighter>
 
             </motion.div>
 

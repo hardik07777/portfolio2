@@ -399,6 +399,8 @@ pre::-webkit-scrollbar-track{
 
 @media(max-width:768px){
 
+   
+
     .about-section{
 
         padding:60px 14px;
@@ -410,16 +412,8 @@ pre::-webkit-scrollbar-track{
     }
 
     .about-wrapper{
-
-        padding:16px;
-
-        border-radius:18px;
-    }
-
-    .editor{
-
-        border-radius:16px;
-    }
+    overflow-x: auto;
+}
 
     .editor-top{
 
@@ -449,10 +443,6 @@ pre::-webkit-scrollbar-track{
         font-size:12px;
     }
 
-    pre{
-
-        font-size:12px !important;
-    }
 }
 .editor:hover::after{
 
@@ -466,4 +456,101 @@ pre::-webkit-scrollbar-track{
     background:rgba(0,0,0,.38);
 
     filter:blur(36px);
+}
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    .about-section{
+        padding:70px 0;
+        overflow-x:hidden;
+    }
+
+    .about-container{
+        width:92%;
+    }
+
+    .about-heading{
+        margin-bottom:40px;
+        text-align:center;
+    }
+
+    .about-label{
+        justify-content:center;
+        gap:12px;
+        margin-bottom:18px;
+    }
+
+    .about-line{
+        width:40px;
+    }
+
+    .about-label p{
+        font-size:.65rem;
+        letter-spacing:.22em;
+    }
+
+    .about-title{
+        font-size:2.7rem;
+        letter-spacing:-1px;
+        line-height:1;
+    }
+
+    .about{
+        padding:0;
+    }
+
+    .about-wrapper{
+    width:92%;
+    margin:0 auto;
+    padding:10px;
+    border-radius:18px;
+}
+
+    .editor{
+        border-radius:14px;
+    }
+
+    .editor-top{
+        height:44px;
+        padding:0 12px;
+    }
+
+    .dots span{
+        width:8px;
+        height:8px;
+    }
+
+    .tab{
+        margin-left:10px;
+        padding:7px 10px;
+        font-size:10px;
+        max-width:160px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+
+    .tab span{
+        font-size:11px;
+    }
+
+    pre{
+        font-size:10px !important;
+        line-height:1.5 !important;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    code{
+        font-size:10px !important;
+    }
+
+    .editor::after,
+    .editor:hover::after{
+        display:none;
+    }
+
 }

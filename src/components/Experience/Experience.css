@@ -267,3 +267,98 @@
         font-size:.9rem;
     }
 }
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    .experience{
+        padding:70px 0;
+    }
+
+    .experience-container{
+        width:92%;
+    }
+
+    .experience-heading{
+        margin-bottom:40px;
+        text-align:center;
+    }
+
+    .experience-label{
+        justify-content:center;
+        gap:12px;
+        margin-bottom:18px;
+    }
+
+    .experience-line{
+        width:40px;
+    }
+
+    .experience-label{
+        font-size:.65rem;
+        letter-spacing:.22em;
+    }
+
+    .experience-title{
+        font-size:2.7rem;
+        line-height:1;
+        letter-spacing:-1px;
+    }
+
+    .experience-grid::after{
+        display:none;
+    }
+
+    .experience-card{
+        grid-template-columns:1fr;
+    }
+
+    .experience-left{
+        grid-template-columns:1fr;
+        gap:18px;
+        padding:28px 20px;
+        border-bottom:1px solid rgba(255,255,255,.08);
+        text-align:center;
+    }
+
+    .experience-logo{
+        justify-content:center;
+    }
+
+    .experience-logo img{
+        width:90px;
+        height:90px;
+        padding:12px;
+    }
+
+    .experience-info{
+        padding-left:0;
+    }
+
+    .experience-info h3{
+        font-size:2rem;
+        line-height:1;
+    }
+
+    .experience-info h4{
+        font-size:1.25rem;
+    }
+
+    .exp-date{
+        font-size:.65rem;
+        letter-spacing:.18em;
+    }
+
+    .experience-right{
+        padding:24px 20px 30px;
+    }
+
+    .experience-points li{
+        font-size:.9rem;
+        line-height:1.7;
+        padding-left:16px;
+    }
+
+}

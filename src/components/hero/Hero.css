@@ -263,3 +263,122 @@
         transform: none;
     }
 }
+/* ==========================================================================
+   MOBILE (480px and below)
+   ========================================================================== */
+
+@media (max-width: 480px){
+
+    .hero{
+        min-height:100vh;
+        padding:90px 0 80px;
+        overflow:hidden;
+    }
+
+    .orbital-container{
+        width:220vw;
+        height:220vw;
+        opacity:.8;
+    }
+
+    .hero-center{
+        margin-top:0;
+    }
+
+    .hero-center::after{
+        width:260px;
+        height:70px;
+        bottom:-15px;
+        filter:blur(40px);
+    }
+
+    .hero-name{
+
+        font-size:clamp(4rem,18vw,5.5rem);
+
+        line-height:.88;
+
+        text-align:center;
+
+        letter-spacing:-.06em;
+    }
+
+    .left{
+        margin-bottom:-12px;
+    }
+
+    .right{
+        margin-top:-18px;
+    }
+
+    .hero-image{
+        width:72%;
+        max-width:250px;
+        margin:8px 0;
+    }
+
+    .hero-content{
+
+        width:90%;
+
+        margin:25px auto 0;
+
+        text-align:center;
+    }
+
+    .hero-content p{
+
+        font-size:.62rem;
+
+        letter-spacing:.32em;
+
+        margin-bottom:12px;
+
+        transform:none;
+
+        min-height:1.2em;
+    }
+
+    .hero-content h2{
+
+        font-size:1.95rem;
+
+        line-height:1.15;
+
+        letter-spacing:-.03em;
+    }
+
+    .hero-leetcode{
+
+        position:relative;
+
+        width:90%;
+
+        margin:40px auto 0;
+
+        transform:none !important;
+
+        right:auto !important;
+
+        bottom:auto !important;
+    }
+
+}
+/* ==========================
+   MOBILE FIX
+========================== */
+
+@media (max-width: 768px) {
+
+    html,
+    body,
+    #root{
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .hero{
+        overflow-x: hidden;
+    }
+
+}

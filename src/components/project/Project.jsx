@@ -1,7 +1,11 @@
 import "./Project.css";
 import { motion } from "framer-motion";
 
+<<<<<<< HEAD
 import CollabBoard from "../../assets/projects/CollabBoard.png";
+=======
+import CollabBoard from "../../assets/projects/CollaBoard.png";
+>>>>>>> b96a15b (Fix asset import and update portfolio)
 import storybook from "../../assets/projects/storybook.png";
 import armoriq from "../../assets/projects/armoriq.png";
 import signaldock from "../../assets/projects/signaldock.png";

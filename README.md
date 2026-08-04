@@ -1,16 +1,57 @@
-# React + Vite
+# 🚀 Hardik Goel | Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern developer portfolio built with **React**, **Vite**, and **Framer Motion**, featuring a clean editorial-inspired design, smooth animations, and responsive layouts. It showcases my projects, experience, skills, and provides an easy way to connect.
 
-Currently, two official plugins are available:
+🌐 **Live Demo:** https://portfolio-hardik07.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Minimal editorial-inspired UI
+- Smooth page animations
+- Fully responsive design
+- Featured projects showcase
+- Experience & Education sections
+- Resume integration
+- Contact form
+- Social media links
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+
+- React
+- Vite
+- JavaScript
+- CSS3
+- Framer Motion
+- React Icons
+
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/hardik07777/portfolio.git
+
+cd portfolio
+
+npm install
+
+npm run dev
+```
+
+---
+
+## 👨‍💻 Author
+
+**Hardik Goel**
+
+- 🌐 Portfolio: https://portfolio-hardik07.vercel.app/
+- 🐙 GitHub: https://github.com/hardik07777
+- 💼 LinkedIn: [https://linkedin.com/in/hardik-goel
+](https://www.linkedin.com/in/hardikgoel07/)
+---
+
+⭐ If you like this project, consider giving it a star.

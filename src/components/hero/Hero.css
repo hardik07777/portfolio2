@@ -307,46 +307,47 @@
         filter:blur(40px);
     }
 
-   .hero-name{
+.hero-name{
     width:100%;
     text-align:center;
-    font-size:6.2rem;
+    font-size:clamp(5.4rem,20vw,6.8rem);
+    line-height:.82;
+    letter-spacing:-.08em;
 }
 
 .left{
     
     margin-right:0;
     margin-left:0;
-    margin-bottom:-55px;
+    margin-bottom:-14vw;
 }
 
 .right{
     margin-left:0;
     margin-right:0;
-    margin-top:-45px;
+    margin-top:-12vw;
     position:relative;
     z-index:4;
-        font-size:8.2rem;
-
 }
 
 .hero-image{
-    width:95%;
-    max-width:340px;
-    margin:-20px 0;
+    width:min(92vw,360px);
+    margin:-6vw 0;
 }
 
 .hero-content{
-    width:92%;
-    max-width:360px;
-    margin:-70px auto 0;
+    width:min(92vw,480px);
+    margin-top:-16vw;
+    margin-left:auto;
+    margin-right:auto;
+
     text-align:center;
     position:relative;
     z-index:5;
 }
 
     .hero-content p{
-        font-size:.62rem;
+    font-size:clamp(.58rem,1.8vw,.75rem);
         letter-spacing:.32em;
         margin-bottom:12px;
         transform:none;
@@ -354,7 +355,7 @@
     }
 
     .hero-content h2{
-        font-size:1.95rem;
+    font-size:clamp(1.55rem,5vw,2rem);
         line-height:1.15;
         letter-spacing:-.03em;
     }

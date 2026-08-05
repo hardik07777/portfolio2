@@ -199,7 +199,7 @@
 /* ==========================================================================
    MOBILE & TABLET RESPONSIVE FALLBACKS
    ========================================================================== */
-@media (max-width:1200px){
+@media (min-width:481px) and (max-width:1200px){
     .hero {
         height: auto;
         min-height: 100vh;
@@ -222,27 +222,27 @@
         margin-top: 40px;
     }
 
-    .hero-name {
-        font-size: clamp(4.5rem, 12vw, 8rem);
-        text-align: center;
-    }
+    .hero-name{
+    font-size:5rem;
+    text-align:center;
+}
 
-    .left {
-        margin-right: 0;
-        margin-bottom: -25px;
-    }
+.left{
+    margin-right:-120px;
+    margin-bottom:-30px;
+}
 
-    .right {
-        margin-left: 0;
-        margin-top: -25px;
-    }
+.right{
+    margin-left:-120px;
+    margin-top:-40px;
+}
 
-    .hero-image {
-        width: 80%;
-        max-width: 360px;
-        transform: none;
-        margin: 20px 0;
-    }
+    .hero-image{
+    width:90%;
+    max-width:320px;
+    transform:none;
+    margin:-10px 0;
+}
 
     .hero-content {
         position: relative;
@@ -267,11 +267,15 @@
    MOBILE (480px and below)
    ========================================================================== */
 
-@media (max-width: 480px){
+/* ==========================================================================
+   MOBILE (480px and below)
+   ========================================================================== */
+
+@media (max-width:480px){
 
     .hero{
         min-height:100vh;
-        padding:90px 0 80px;
+        padding:90px 0 30px;
         overflow:hidden;
     }
 
@@ -282,87 +286,93 @@
     }
 
     .hero-center{
-        margin-top:0;
+        position:relative;
+        top:0;
+        left:0;
+        transform:none;
+
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+
+        width:100%;
+        margin-top:-25px;
+        overflow:visible;
     }
 
     .hero-center::after{
         width:260px;
         height:70px;
-        bottom:-15px;
+        bottom:-18px;
         filter:blur(40px);
     }
 
-    .hero-name{
+   .hero-name{
+    width:100%;
+    text-align:center;
+    font-size:6.2rem;
+}
 
-        font-size:clamp(4rem,18vw,5.5rem);
+.left{
+    
+    margin-right:0;
+    margin-left:0;
+    margin-bottom:-55px;
+}
 
-        line-height:.88;
+.right{
+    margin-left:0;
+    margin-right:0;
+    margin-top:-45px;
+    position:relative;
+    z-index:4;
+        font-size:8.2rem;
 
-        text-align:center;
+}
 
-        letter-spacing:-.06em;
-    }
+.hero-image{
+    width:95%;
+    max-width:340px;
+    margin:-20px 0;
+}
 
-    .left{
-        margin-bottom:-12px;
-    }
-
-    .right{
-        margin-top:-18px;
-    }
-
-    .hero-image{
-        width:72%;
-        max-width:250px;
-        margin:8px 0;
-    }
-
-    .hero-content{
-
-        width:90%;
-
-        margin:25px auto 0;
-
-        text-align:center;
-    }
+.hero-content{
+    width:92%;
+    max-width:360px;
+    margin:-70px auto 0;
+    text-align:center;
+    position:relative;
+    z-index:5;
+}
 
     .hero-content p{
-
         font-size:.62rem;
-
         letter-spacing:.32em;
-
         margin-bottom:12px;
-
         transform:none;
-
         min-height:1.2em;
     }
 
     .hero-content h2{
-
         font-size:1.95rem;
-
         line-height:1.15;
-
         letter-spacing:-.03em;
     }
 
     .hero-leetcode{
-
         position:relative;
-
         width:90%;
-
         margin:40px auto 0;
-
+        right:auto;
+        bottom:auto;
         transform:none !important;
-
-        right:auto !important;
-
-        bottom:auto !important;
     }
 
+    .hero:hover .left,
+    .hero:hover .right,
+    .hero:hover .hero-image{
+        transform:none;
+    }
 }
 /* ==========================
    MOBILE FIX

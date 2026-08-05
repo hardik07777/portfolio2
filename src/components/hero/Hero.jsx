@@ -29,7 +29,9 @@ export default function Hero() {
 
       <StaticBackground />
 
-      <div className="hero-center">
+      <div
+  className="hero-center"
+  >
 
         <motion.h1
           className="hero-name left"
